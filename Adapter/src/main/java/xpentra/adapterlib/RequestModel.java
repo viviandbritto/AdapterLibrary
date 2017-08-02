@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
  * Created by Vivian on 8/2/2017.
  */
 
-public class RequestModel extends ResponseValidator {
+public class RequestModel{
     private String number;
     private String date;
 
