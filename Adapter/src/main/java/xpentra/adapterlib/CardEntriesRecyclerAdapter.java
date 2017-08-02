@@ -6,6 +6,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
 import java.util.ArrayList;
 import java.util.Map;
 
@@ -48,7 +49,7 @@ public class CardEntriesRecyclerAdapter extends RecyclerView.Adapter<CardEntries
 
         public CardEntryViewHolder(View itemView) {
             super(itemView);
-            entries= (EntriesView) itemView.findViewById(R.id.entries);
+            entries = (EntriesView) itemView.findViewById(R.id.entries);
         }
 
         public void updateCardWithEntries(@Nullable String title, @NonNull Map<String, String> entries) {
