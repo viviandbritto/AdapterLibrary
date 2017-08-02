@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <com.xtempo.q2t.support.views.EntriesView
+    <xpentra.adapterlib.EntriesView
         android:id="@+id/entries"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
