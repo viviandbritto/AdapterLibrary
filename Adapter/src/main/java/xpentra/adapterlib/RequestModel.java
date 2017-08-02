@@ -1,6 +1,5 @@
 package xpentra.adapterlib;
 
-import android.databinding.Bindable;
 import android.support.annotation.NonNull;
 
 /**
@@ -11,12 +10,10 @@ public class RequestModel extends ResponseValidator {
     private String number = "5495";
     private String date = "2/8/2017";
 
-    @Bindable
     public @NonNull String getNumber() {
         return number;
     }
 
-    @Bindable
     public @NonNull String getDate() {
         return date;
     }
