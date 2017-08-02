@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <import type="android.view.View"/>
+
+        <import type="xpentra.adapterlib.Service"/>
+
+        <variable
+            name="entry"
+            type="xpentra.adapterlib.Request"/>
+
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card"
+        style="@style/CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_extra_small"
+        android:layout_marginLeft="@dimen/margin_extra_small"
+        android:layout_marginRight="@dimen/margin_extra_small">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:showDividers="middle"
+            android:divider="@drawable/line"
+            android:background="?attr/selectableItemBackground">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/margin_small">
+
+                <TextView
+                    android:id="@+id/number"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="left"
+                    android:text='@{"#" + entry.number}'/>
+
+                <TextView
+                    android:id="@+id/date"
+                    style="@style/TextView.Medium"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:text="@{entry.date}"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/margin_small">
+
+                <TextView
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/passengers"/>
+
+                <TextView
+                    android:id="@+id/passengers"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:text='@{entry.passengerNames}'/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_margin="@dimen/margin_small">
+
+                <TextView
+                    android:id="@+id/type"
+                    style="@style/TextView.Medium"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{entry.type.toString() + " Services:"}'/>
+
+                <ImageView
+                    android:id="@+id/air"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:src="@drawable/ic_air"
+                    android:tint="@color/secondary"
+                    android:visibility="@{entry.services.contains(Service.AIR) ? View.VISIBLE : View.GONE}"/>
+
+                <ImageView
+                    android:id="@+id/cab"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:src="@drawable/ic_cab"
+                    android:tint="@color/secondary"
+                    android:visibility="@{entry.services.contains(Service.CAB) ? View.VISIBLE : View.GONE}"/>
+
+                <ImageView
+                    android:id="@+id/rail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:src="@drawable/ic_rail"
+                    android:tint="@color/secondary"
+                    android:visibility="@{entry.services.contains(Service.RAIL) ? View.VISIBLE : View.GONE}"/>
+
+                <ImageView
+                    android:id="@+id/bus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:src="@drawable/ic_bus"
+                    android:tint="@color/secondary"
+                    android:visibility="@{entry.services.contains(Service.BUS) ? View.VISIBLE : View.GONE}"/>
+
+                <ImageView
+                    android:id="@+id/accommodation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:src="@drawable/ic_accommodation"
+                    android:tint="@color/secondary"
+                    android:visibility="@{entry.services.contains(Service.ACCOMMODATION) ? View.VISIBLE : View.GONE}"/>
+
+                <ImageView
+                    android:id="@+id/visa"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:src="@drawable/ic_visa"
+                    android:tint="@color/secondary"
+                    android:visibility="@{entry.services.contains(Service.VISA) ? View.VISIBLE : View.GONE}"/>
+
+                <ImageView
+                    android:id="@+id/forex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:src="@drawable/ic_forex"
+                    android:tint="@color/secondary"
+                    android:visibility="@{entry.services.contains(Service.FOREX) ? View.VISIBLE : View.GONE}"/>
+
+                <ImageView
+                    android:id="@+id/insurance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_small"
+                    android:src="@drawable/ic_insurance"
+                    android:tint="@color/secondary"
+                    android:visibility="@{entry.services.contains(Service.INSURANCE) ? View.VISIBLE : View.GONE}"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>

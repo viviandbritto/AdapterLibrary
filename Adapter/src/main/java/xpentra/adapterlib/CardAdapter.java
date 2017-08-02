@@ -73,7 +73,7 @@ public class CardAdapter<T> extends RecyclerView.Adapter<CardAdapter.CardViewHol
                 return;
 
             ViewDataBinding dataBinding = DataBindingUtil.bind(itemView);
-            dataBinding.setVariable(xpentra.adapterlib.BR.model, data);
+            dataBinding.setVariable(xpentra.adapterlib.BR.entry, data);
             dataBinding.executePendingBindings();
         }
     }
