@@ -8,8 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import java.util.ArrayList;
 import java.util.Map;
-import butterknife.Bind;
-import butterknife.ButterKnife;
 
 /**
  * Created by aksha_000 on 4/24/2016.
@@ -45,12 +43,12 @@ public class CardEntriesRecyclerAdapter extends RecyclerView.Adapter<CardEntries
     }
 
     public class CardEntryViewHolder extends RecyclerView.ViewHolder {
-        @Bind(R2.id.entries)
+
         protected EntriesView entries;
 
         public CardEntryViewHolder(View itemView) {
             super(itemView);
-            ButterKnife.bind(this, itemView);
+            entries= (EntriesView) itemView.findViewById(R.id.entries);
         }
 
         public void updateCardWithEntries(@Nullable String title, @NonNull Map<String, String> entries) {
