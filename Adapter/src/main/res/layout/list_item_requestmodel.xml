@@ -7,7 +7,7 @@
         <import type="android.view.View"/>
 
         <variable
-            name="model"
+            name="entry"
             type="xpentra.adapterlib.RequestModel"/>
 
     </data>
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="left"
-                    android:text='@{"#" + model.number}'/>
+                    android:text='@{"#" + entry.number}'/>
 
                 <TextView
                     android:id="@+id/date"
@@ -51,7 +51,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:gravity="right"
-                    android:text="@{model.date}"/>
+                    android:text="@{entry.date}"/>
 
             </LinearLayout>
 
